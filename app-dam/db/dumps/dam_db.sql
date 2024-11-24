@@ -1,14 +1,16 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: mysql-server
--- Tiempo de generación: 30-11-2020 a las 23:27:10
--- Versión del servidor: 5.7.27
--- Versión de PHP: 7.2.19
+-- Servidor: mysql-server:3306
+-- Tiempo de generación: 24-11-2024 a las 22:54:29
+-- Versión del servidor: 5.7.44
+-- Versión de PHP: 8.2.8
+CREATE DATABASE IF NOT EXISTS dam_db;
+
+USE dam_db;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,10 +21,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `DAM`
+-- Data base: `dam_db`
 --
-CREATE DATABASE IF NOT EXISTS `DAM` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `DAM`;
 
 -- --------------------------------------------------------
 

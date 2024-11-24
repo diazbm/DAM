@@ -18,7 +18,7 @@ class Database {
         port     : '3306',
         user     : 'root',
         password : 'userpass',
-        database : 'DAM'
+        database : 'dam_db'
       });
 
       this.connection.connect((err) => {
