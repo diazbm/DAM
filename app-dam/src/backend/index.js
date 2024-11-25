@@ -7,12 +7,14 @@ const cors = require('cors');
 const express = require('express');
 const app = express();
 const { getDatabaseInstance } = require('./mysql-connector');
-const routerDispositivo = require('./routes/dispositivo')
+const routerDispositivos = require('./routes/dispositivo');
+const routerMediciones = require('./routes/mediciones');
+const routerLogRiegos = require('./routes/log_riegos');
 
 const corsOptions = {
     origin: '*',
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-}
+};
 
 // to parse application/json
 app.use(express.json()); 
@@ -31,10 +33,12 @@ setTimeout(() => {
     }
 }, 5000); // 5000 ms = 5 segundos
 
-app.use('/dispositivos', routerDispositivo);
+app.use('/dispositivos', routerDispositivos);
+app.use('/mediciones', routerMediciones);
+app.use('/log_riegos', routerLogRiegos);
 
 app.get('/', function(req, res, next) {
-    res.send({'mensaje': 'Hola DAM'}).status(200);
+    res.send({'mensaje': 'DAM server activo'}).status(200);
 });
 
 app.listen(PORT, function (req, res) {
