@@ -11,7 +11,7 @@ export const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'dispositivo',
+    path: 'dispositivo/:id',
     loadComponent: () => import('./dispositivo/dispositivo.page').then( m => m.DispositivoPage)
   },
 ];

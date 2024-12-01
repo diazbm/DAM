@@ -1,4 +1,13 @@
-<ion-item>
-  <ion-label>{{ name }}</ion-label>
+<ion-item class="device-item-element" (click)="onClick(device.dispositivoId)">
+  <ion-label>
+    <ion-avatar>
+      <img alt="Silhouette of a person's head" src="../../../assets/sensor.png" />
+    </ion-avatar>
+  </ion-label>
+  <ion-label>
+    {{ device.nombre }}
+  </ion-label>
+  <ion-label>
+    {{ device.ubicacion }}
+  </ion-label>
 </ion-item>
-
