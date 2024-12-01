@@ -1,0 +1,13 @@
+ion-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; // Espacio entre los botones
+    padding: 10px;
+  }
+}

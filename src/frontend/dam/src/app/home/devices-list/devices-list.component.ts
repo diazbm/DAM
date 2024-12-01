@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DeviceItemComponent } from '../device-item/device-item.component';
 import { CommonModule } from '@angular/common';
-import { IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonList, IonSpinner } from '@ionic/angular/standalone';
-import { DeviceService } from 'src/app/services/get-devices.service';
+import { IonCard, IonCardContent, IonList, IonSpinner } from '@ionic/angular/standalone';
+import { DeviceService } from 'src/app/services/devices.service';
 
 @Component({
   selector: 'app-devices-list',

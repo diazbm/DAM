@@ -7,9 +7,14 @@ export const routes: Routes = [
     loadComponent: () => import('./home/home.page').then((m) => m.HomePage),
   },
   {
-    path: 'device/:id',
+    path: 'device/:deviceId',
     title: 'device',
     loadComponent: () => import('./device/device.page').then( m => m.DevicePage)
+  },
+  {
+    path: 'logs/:deviceId/:electrovalveId',
+    title: 'logs',
+    loadComponent: () => import('./logs/irrigation-logs.page').then( m => m.IrrigationLogsPage)
   },
   {
     path: '',

@@ -1,13 +1,54 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>dispositivo</ion-title>
+    <ion-title>Detalles del Dispositivo</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">dispositivo</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-breadcrumb>
+    <ion-breadcrumbs>
+      <ion-breadcrumb href="/">Dispositivos</ion-breadcrumb>
+      <ion-breadcrumb>{{ deviceDetail.nombre }}</ion-breadcrumb>
+    </ion-breadcrumbs>
+  </ion-breadcrumb>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ deviceDetail.nombre }}</ion-card-title>
+      <ion-card-subtitle>Ubicación: {{ deviceDetail.ubicacion }}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <div *ngIf="!isLoading; else loading">
+        <p><strong>ID:</strong> {{ deviceDetail.dispositivoId }}</p>
+        <p><strong>Humedad Actual:</strong> {{ deviceDetail.humedadActual }}%</p>
+        <p><strong>Electroválvula ID:</strong> {{ deviceDetail.electrovalvulaId }}</p>
+        <p>
+          <strong>Estado de la Electroválvula:</strong>
+          <span *ngIf="electroValveOpen; else closed">Abierta</span>
+          <ng-template #closed>Cerrada</ng-template>
+        </p>
+      </div>
+
+      <ng-template #loading>
+        <ion-spinner name="dots"></ion-spinner>
+      </ng-template>
+    </ion-card-content>
+  </ion-card>
+
+
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <div class="button-container">
+      <ion-button expand="block" color="primary" (click)="toggleElectrovalvula()">
+        {{ electroValveOpen ? 'Cerrar Electroválvula' : 'Abrir Electroválvula' }}
+      </ion-button>
+      <ion-button expand="block" color="secondary"
+        href="{{ [deviceDetail.dispositivoId, deviceDetail.electrovalvulaId] | buildUrl:'logs' }}">
+        Ver Logs de Apertura
+      </ion-button>
+    </div>
+  </ion-toolbar>
+</ion-footer>

@@ -6,7 +6,6 @@ const { getDatabaseInstance } = require('../../mysql-connector');
 
 routerLogRiegos.get('/', function (req, res, next) {
     try {
-        // Reutilizamos la conexión
         const dbInstance = getDatabaseInstance();
         const dbConnection = dbInstance.connection;
 
@@ -27,10 +26,33 @@ routerLogRiegos.get('/', function (req, res, next) {
     }
 });
 
+routerLogRiegos.get('/:id', function (req, res, next) {
+    const electroValvulaId = req.params.id
+    try {
+        const dbInstance = getDatabaseInstance();
+        const dbConnection = dbInstance.connection;
+
+        // Ejecutamos una query para obtener los logs de riego de una electrovalvula en particular
+        const query = 'SELECT * FROM `Log_Riegos` WHERE electrovalvulaId =' + electroValvulaId + ' ORDER BY fecha DESC'
+        logRiegos = dbConnection.query(query, function (error, results) {
+            if (error) {
+                console.error('Error obteniendo datos:', JSON.stringify(error));
+                res.status(500);
+                res.send({ error: 'internal server error' });
+            } else {
+                res.send(JSON.stringify(results)).status(200);
+            }
+        });
+    } catch (error) {
+        console.error('Ocurrió un error en la obtención de dispositivos', error);
+        res.status(500);
+        res.send({ error: 'internal server error' });
+    }
+});
+
 routerLogRiegos.post('/', function (req, res, next) {
     const logRiego = req.body
     try {
-        // Reutilizamos la conexión
         const dbInstance = getDatabaseInstance();
         const dbConnection = dbInstance.connection;
 
