@@ -9,7 +9,7 @@ export const routes: Routes = [
   {
     path: 'device/:id',
     title: 'device',
-    loadComponent: () => import('./dispositivo/dispositivo.page').then( m => m.DispositivoPage)
+    loadComponent: () => import('./device/device.page').then( m => m.DevicePage)
   },
   {
     path: '',

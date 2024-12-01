@@ -4,13 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
 
 @Component({
-  selector: 'app-dispositivo',
-  templateUrl: './dispositivo.page.html',
-  styleUrls: ['./dispositivo.page.scss'],
+  selector: 'app-device',
+  templateUrl: './device.page.html',
+  styleUrls: ['./device.page.scss'],
   standalone: true,
   imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
 })
-export class DispositivoPage implements OnInit {
+export class DevicePage implements OnInit {
 
   constructor() { }
 
