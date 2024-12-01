@@ -10,7 +10,7 @@ import { DeviceService } from 'src/app/services/get-devices.service';
   styleUrls: ['./devices-list.component.scss'],
   standalone: true,
   imports: [CommonModule,
-    IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonList, IonSpinner,
+    IonCard, IonCardContent, IonList, IonSpinner,
     DeviceItemComponent]
 })
 export class DevicesListComponent implements OnInit {
