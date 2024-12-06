@@ -42,10 +42,10 @@
 <ion-footer>
   <ion-toolbar>
     <div class="button-container">
-      <ion-button expand="block" color="primary" (click)="toggleElectrovalvula()">
+      <ion-button class="button-element" expand="block" color="primary" (click)="toggleElectrovalvula()">
         {{ electroValveOpen ? 'Cerrar Electroválvula' : 'Abrir Electroválvula' }}
       </ion-button>
-      <ion-button expand="block" color="secondary"
+      <ion-button class="button-element" expand="block" color="secondary"
         href="{{ [deviceDetail.dispositivoId, deviceDetail.electrovalvulaId] | buildUrl:'logs' }}">
         Ver Logs de Apertura
       </ion-button>
