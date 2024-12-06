@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/standalone';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonImg } from '@ionic/angular/standalone';
 import { DevicesListComponent } from "./devices-list/devices-list.component";
 
 @Component({
@@ -7,7 +7,7 @@ import { DevicesListComponent } from "./devices-list/devices-list.component";
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   standalone: true,
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, DevicesListComponent],
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonImg, DevicesListComponent],
 })
 export class HomePage {
   constructor() {}
