@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 3.0.1
+
+* Project modification
+    * Adds node backend: devices and logs API.
+    * Fix database connection: add singleton pattern connector.
+    * Fix database dump: irrigation fields.
+    * Adds frontend: add two new pages with routing, list and master detail.
 
 ## 2.2.0
 

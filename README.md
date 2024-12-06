@@ -29,6 +29,28 @@ Si pudiste acceder al cliente web y al administrador significa que la aplicació
 
 > Si te aparece un error la primera vez que corres la app, deteńe el proceso y volvé a iniciarla. Esto es debido a que el backend espera que la DB esté creada al iniciar, y en la primera ejecución puede no alcanzar a crearse. A partir de la segunda vez el problema queda solucionado.
 
+### Funcionalidad y pantallas
+
+El proyecto se encarga de listar un conjunto de sensores de IOT en la vista /home de la aplicación. Esta lista permite clicar en cada uno de sus elementos para ver los detalles del sensor.
+
+Además se suma un breadcrumb para facilitar la navegación entre pantallas, que es de tres niveles:
+
+home > detalle del dispositivo > logs de riego del dispositivo.
+
+En la pantalla de detalle del dispositivo se cuenta con la funcionalidad de permitir abrir o cerrar la electrovalvula asociada al mismo de forma remota. También se obtiene la medición de temperatura del mismo mediante una llamada client side al servicio que obtiene esas mediciones de manera virtual (simulada).
+
+Finalmente en el listado de logs se cuenta con logs ordenados por fecha y hora, además de detalles de apertura y cierre por ID de electroválvula.
+
+### Backend
+
+En el backend se cuenta con 6 endpoints que se muestran a continuación:
+
+
+
+### Posibles mejoras
+
+Como posibles mejoras que se pueden implementar en ese proyecto está la funcionalidad de paginado de listas y aplicar un sistema de autenticación.
+
 ## Licencia 📄
 
 Este proyecto está bajo Licencia ([MIT](https://choosealicense.com/licenses/mit/)). Podés ver el archivo [LICENSE.md](LICENSE.md) para más detalles sobre el uso de este material.
