@@ -46,7 +46,8 @@ En la pantalla de detalle del dispositivo se cuenta con la funcionalidad de perm
 
 Finalmente en el listado de mediciones se cuenta con las mismas ordenadas por fecha y hora, además de detalles del valor medido
 
-<img width="297" alt="Captura de pantalla 2024-12-06 a la(s) 01 44 53" src="https://github.com/user-attachments/assets/bad2889a-c058-41d3-a155-bc2a8b7bd394">
+<img width="299" alt="Captura de pantalla 2024-12-14 a la(s) 22 36 19" src="https://github.com/user-attachments/assets/fa3799be-fee5-4399-818e-f9ee506adfef" />
+
 
 
 ### Backend
