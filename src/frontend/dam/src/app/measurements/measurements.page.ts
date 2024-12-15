@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ElementHoverEffectDirective } from '../directives/element-hover-effect.directive';
 import { IonContent, IonHeader, IonBreadcrumbs, IonBreadcrumb, IonSpinner, IonTitle, IonToolbar, IonItem, IonList, IonLabel } from '@ionic/angular/standalone';
 import { MeasurementsService } from '../services/measurements.service';
 import { BuildUrlPipe } from 'src/app/pipes/build-url.pipe';
@@ -11,7 +12,7 @@ import { BuildUrlPipe } from 'src/app/pipes/build-url.pipe';
   templateUrl: './measurements.page.html',
   styleUrls: ['./measurements.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonBreadcrumbs, IonBreadcrumb, IonSpinner, IonTitle, IonToolbar, IonItem, IonList, IonLabel, CommonModule, FormsModule, BuildUrlPipe]
+  imports: [ElementHoverEffectDirective, IonContent, IonHeader, IonBreadcrumbs, IonBreadcrumb, IonSpinner, IonTitle, IonToolbar, IonItem, IonList, IonLabel, CommonModule, FormsModule, BuildUrlPipe]
 })
 export class MeasurementsPage implements OnInit {
   measurments: any[] = []

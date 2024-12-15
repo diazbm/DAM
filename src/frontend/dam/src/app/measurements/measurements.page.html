@@ -16,7 +16,7 @@
     <h2 class="measurements-title">Registro de mediciones</h2>
     <ion-list class="measurements-list" *ngIf="measurments.length > 0; else noMeasurements">
       <ion-item *ngFor="let measurment of measurments">
-        <ion-label>
+        <ion-label appElementHoverEffect class="measurement-element">
           <h3>Valor: {{ measurment.valor }}</h3>
           <p>Fecha: {{ measurment.fecha | date:'medium' }}</p>
         </ion-label>
