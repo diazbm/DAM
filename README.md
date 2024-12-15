@@ -38,13 +38,13 @@ El proyecto se encarga de listar un conjunto de sensores de IOT en la vista /hom
 
 Además se suma un breadcrumb para facilitar la navegación entre pantallas, que es de tres niveles:
 
-home > detalle del dispositivo > logs de riego del dispositivo.
+home > detalle del dispositivo > mediciones asociadas al dispositivo.
 
 En la pantalla de detalle del dispositivo se cuenta con la funcionalidad de permitir abrir o cerrar la electrovalvula asociada al mismo de forma remota. También se obtiene la medición de temperatura del mismo mediante una llamada client side al servicio que obtiene esas mediciones de manera virtual (simulada).
 
 <img width="301" alt="Captura de pantalla 2024-12-06 a la(s) 01 44 27" src="https://github.com/user-attachments/assets/4e6fa37a-62dd-4f3b-a1e9-58e2f5b35e4d">
 
-Finalmente en el listado de logs se cuenta con logs ordenados por fecha y hora, además de detalles de apertura y cierre por ID de electroválvula.
+Finalmente en el listado de mediciones se cuenta con las mismas ordenadas por fecha y hora, además de detalles del valor medido
 
 <img width="297" alt="Captura de pantalla 2024-12-06 a la(s) 01 44 53" src="https://github.com/user-attachments/assets/bad2889a-c058-41d3-a155-bc2a8b7bd394">
 
@@ -57,7 +57,7 @@ En el backend se cuenta con 6 endpoints que se muestran a continuación:
 |---------------|---------------|---------------|---------------|
 | GET    | /dispositivos    |     | Obtener lista de dispositivos    |
 | GET    | /dispositivos/:id    |     | Obtener detalle de un dispositivo por id   |
-| GET    | /mediciones/:id    |     | Obtener detalle de una medición por id de dispositivo    |
+| GET    | /mediciones/:id    |     | Obtener la lista de mediciones de un dispositivo por id   |
 | POST    | /mediciones    |   { "fecha": "2024-11-24 13:00:00", "valor": "40", "dispositivoId": 1 }  | Crear una nueva medición para un dispositivo    |
 | GET    | /log_riegos/:id    |     | Obtener logs de riego por id de electroválvula    |
 | POST    | /log_riegos    | { "fecha": "2024-12-01 17:37:41", "apertura": 0, "electrovalvulaId": 1 }    | Crear un log de riego para una electroválvula    |

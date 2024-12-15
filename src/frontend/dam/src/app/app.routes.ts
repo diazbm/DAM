@@ -12,9 +12,9 @@ export const routes: Routes = [
     loadComponent: () => import('./device/device.page').then( m => m.DevicePage)
   },
   {
-    path: 'logs/:deviceId/:electrovalveId',
-    title: 'logs',
-    loadComponent: () => import('./logs/irrigation-logs.page').then( m => m.IrrigationLogsPage)
+    path: 'measurements/:deviceId',
+    title: 'measurements',
+    loadComponent: () => import('./measurements/measurements.page').then( m => m.MeasurementsPage)
   },
   {
     path: '',

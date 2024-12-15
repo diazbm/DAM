@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mediciones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-breadcrumb>
+    <ion-breadcrumbs>
+      <ion-breadcrumb class="breadcrumb-width" href="/">Dispositivos</ion-breadcrumb>
+      <ion-breadcrumb class="breadcrumb-width" href="{{[deviceId] | buildUrl:'device' }}">Sensor {{ deviceId }}</ion-breadcrumb>
+      <ion-breadcrumb class="breadcrumb-width">Mediciones</ion-breadcrumb>
+    </ion-breadcrumbs>
+  </ion-breadcrumb>
+  <div *ngIf="!isLoading; else loading">
+    <h2 class="measurements-title">Registro de mediciones</h2>
+    <ion-list class="measurements-list" *ngIf="measurments.length > 0; else noMeasurements">
+      <ion-item *ngFor="let measurment of measurments">
+        <ion-label>
+          <h3>Valor: {{ measurment.valor }}</h3>
+          <p>Fecha: {{ measurment.fecha | date:'medium' }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <ng-template #loading>
+    <ion-spinner name="dots"></ion-spinner>
+  </ng-template>
+
+  <ng-template #noMeasurements>
+    <p>No se encontraron mediciones para este dispositivo.</p>
+  </ng-template>
+</ion-content>

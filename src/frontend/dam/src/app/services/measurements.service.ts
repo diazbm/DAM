@@ -19,4 +19,8 @@ export class MeasurementsService {
     }
     return this.http.post<any[]>(this.apiUrl, body);
   }
+
+  getMeasurementsByDeviceId(dispositivoId: number): Observable<string[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/${dispositivoId}`);
+  }
 }

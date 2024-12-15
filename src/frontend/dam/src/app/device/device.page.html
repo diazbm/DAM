@@ -46,8 +46,8 @@
         {{ electroValveOpen ? 'Cerrar Electroválvula' : 'Abrir Electroválvula' }}
       </ion-button>
       <ion-button class="button-element" expand="block" color="secondary"
-        href="{{ [deviceDetail.dispositivoId, deviceDetail.electrovalvulaId] | buildUrl:'logs' }}">
-        Ver Logs de Apertura
+        href="{{ [deviceDetail.dispositivoId] | buildUrl:'measurements' }}">
+        Ver mediciones registradas
       </ion-button>
     </div>
   </ion-toolbar>
